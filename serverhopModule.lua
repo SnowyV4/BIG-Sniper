@@ -12,19 +12,16 @@ end
 
 local module = {}
 function module:Teleport(min)
-	while wait() do
 		pcall(function()
             local Next; repeat
                 local Servers = ListServers(Next)
                 for i,v in next, Servers.data do
-                    if v.playing > min and v.id then
+                    if v.playing > min and v.playing < 34 and v.id then
                         local s = pcall(TPS.TeleportToPlaceInstance, TPS, _place, v.id, Player)
                         if s then break end
                     end
                 end
             until not next
 		end)
-	end
 end
-
 return module
