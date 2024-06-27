@@ -11,7 +11,7 @@ function ListServers(cursor)
 end
 
 local module = {}
-function module:Teleport(placeId, min)
+function module:Teleport(min)
 	while wait() do
 		pcall(function()
             local Next; repeat
@@ -26,3 +26,5 @@ function module:Teleport(placeId, min)
 		end)
 	end
 end
+
+return module
